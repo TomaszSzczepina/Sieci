@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wszystkie Żarty</title>
+</head>
+<body>
+<h1>Wszystkie Żarty</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Treść</th>
+        <th>Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="joke : ${jokes}">
+        <td th:text="${joke.id}"></td>
+        <td th:text="${joke.content}"></td>
+        <td>
+            <!-- Przycisk edycji -->
+            <a th:href="@{/edit-joke/{id}(id=${joke.id})}">Edytuj</a>
+
+            <!-- Przycisk usuwania -->
+            <a th:href="@{/delete-joke/{id}(id=${joke.id})}"
+               onclick="return confirm('Czy na pewno chcesz usunąć ten żart?')">Usuń</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Powrót do strony głównej</a>
+</body>
+</html>
+
+

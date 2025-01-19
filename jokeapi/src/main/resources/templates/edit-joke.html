@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edytuj Żart</title>
+</head>
+<body>
+<h1>Edytuj Żart</h1>
+<form th:action="@{/update-joke/{id}(id=${joke.id})}" method="post">
+    <label for="content">Treść żartu:</label>
+    <textarea name="jokeContent" id="content" rows="4" cols="50" th:text="${joke.content}"></textarea>
+    <br>
+    <button type="submit">Zapisz zmiany</button>
+</form>
+<br>
+<a href="/jokes">Powrót do wszystkich żartów</a>
+</body>
+</html>
+
+

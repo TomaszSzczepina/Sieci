@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Żart</title>
+</head>
+<body>
+<h1>Dodaj Żart</h1>
+<form action="/save-joke" method="post">
+    <label for="jokeContent">Twój Żart:</label>
+    <textarea name="jokeContent" id="jokeContent" rows="4" cols="50" required></textarea><br><br>
+    <button type="submit">Zapisz Żart</button>
+</form>
+
+<p th:text="${message}"></p> <!-- Wyświetlenie komunikatu -->
+<a href="/">Powrót do strony głównej</a>
+</body>
+</html>
+
